@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1CFC8D28-F54F-4415-97CC-96D5647ACFDA}|Project2\\Project2.vcxproj|C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day3\\Project2\\main03.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1CFC8D28-F54F-4415-97CC-96D5647ACFDA}|Project2\\Project2.vcxproj|solutionrelative:Project2\\main03.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CFC8D28-F54F-4415-97CC-96D5647ACFDA}|Project2\\Project2.vcxproj|C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day3\\Project2\\main2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1CFC8D28-F54F-4415-97CC-96D5647ACFDA}|Project2\\Project2.vcxproj|solutionrelative:Project2\\main2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CFC8D28-F54F-4415-97CC-96D5647ACFDA}|Project2\\Project2.vcxproj|C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day3\\Project2\\main01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1CFC8D28-F54F-4415-97CC-96D5647ACFDA}|Project2\\Project2.vcxproj|solutionrelative:Project2\\main01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main03.cpp",
+              "DocumentMoniker": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day3\\Project2\\main03.cpp",
+              "RelativeDocumentMoniker": "Project2\\main03.cpp",
+              "ToolTip": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day3\\Project2\\main03.cpp",
+              "RelativeToolTip": "Project2\\main03.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-16T12:30:18.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main2.cpp",
+              "DocumentMoniker": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day3\\Project2\\main2.cpp",
+              "RelativeDocumentMoniker": "Project2\\main2.cpp",
+              "ToolTip": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day3\\Project2\\main2.cpp",
+              "RelativeToolTip": "Project2\\main2.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-16T12:10:11.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main01.cpp",
+              "DocumentMoniker": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day3\\Project2\\main01.cpp",
+              "RelativeDocumentMoniker": "Project2\\main01.cpp",
+              "ToolTip": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day3\\Project2\\main01.cpp",
+              "RelativeToolTip": "Project2\\main01.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-16T10:19:13.085Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
