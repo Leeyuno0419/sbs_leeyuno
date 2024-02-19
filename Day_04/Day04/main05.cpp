@@ -21,13 +21,13 @@ void main() {
 }
 
 void PrintGameStart(){
-	::printf("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n");
-	::printf("¦¢   Rock Scissor Paper GameStart    ¦¢\n");
-	::printf("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n");
+	::printf("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
+	::printf("â”‚   Rock Scissor Paper GameStart    â”‚\n");
+	::printf("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
 }
 
 void ChooseMyHand() {
-	::printf("°¡À§(0), ¹ÙÀ§(1), º¸(2) Áß¿¡ ¼±ÅÃÇØÁÖ¼¼¿ä.\n");
+	::printf("ê°€ìœ„(0), ë°”ìœ„(1), ë³´(2) ì¤‘ì— ì„ íƒí•´ì£¼ì„¸ìš”.\n");
 	cin >> _myHand;
 }
 
@@ -36,32 +36,32 @@ void ChooseComHand() {
 }
 
 void PrintHands() {
-	::printf("³»°¡ °í¸¥ ¼Õ: ");
+	::printf("ë‚´ê°€ ê³ ë¥¸ ì†: ");
 	switch (_myHand)
 	{
 	case 0:
-		::printf("°¡À§\n");
+		::printf("ê°€ìœ„\n");
 		break;
 	case 1:
-		::printf("¹ÙÀ§\n");
+		::printf("ë°”ìœ„\n");
 		break;
 	case 2:
-		::printf("º¸\n");
+		::printf("ë³´\n");
 		break;
 	default:
 		break;
 	}
-	::printf("ÄÄÇ»ÅÍ°¡ °í¸¥ ¼Õ: ");
+	::printf("ì»´í“¨í„°ê°€ ê³ ë¥¸ ì†: ");
 	switch (_comHand)
 	{
 	case 0:
-		::printf("°¡À§\n");
+		::printf("ê°€ìœ„\n");
 		break;
 	case 1:
-		::printf("¹ÙÀ§\n");
+		::printf("ë°”ìœ„\n");
 		break;
 	case 2:
-		::printf("º¸\n");
+		::printf("ë³´\n");
 		break;
 	default:
 		break;
@@ -70,32 +70,33 @@ void PrintHands() {
 
 void PrintGameResult() {
 	if (_myHand == _comHand) {
-		::printf("ºñ°å½À´Ï´Ù.\n");
+		::printf("ë¹„ê²¼ìŠµë‹ˆë‹¤.\n");
 	}
 	else if (_myHand == 0) {
 		if (_comHand == 1) {
-			::printf("ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù.\n");
+			::printf("ì»´í“¨í„°ê°€ ì´ê²¼ìŠµë‹ˆë‹¤.\n");
 		}
 		if (_comHand == 2) {
-			::printf("ÇÃ·¹ÀÌ¾î°¡ ÀÌ°å½À´Ï´Ù.\n");
+			::printf("í”Œë ˆì´ì–´ê°€ ì´ê²¼ìŠµë‹ˆë‹¤.\n");
 		}
 	}
 	else if (_myHand == 1) {
 		if (_comHand == 2) {
-			::printf("ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù.\n");
+			::printf("ì»´í“¨í„°ê°€ ì´ê²¼ìŠµë‹ˆë‹¤.\n");
 		}
 		if (_comHand == 0) {
-			::printf("ÇÃ·¹ÀÌ¾î°¡ ÀÌ°å½À´Ï´Ù.\n");
+			::printf("í”Œë ˆì´ì–´ê°€ ì´ê²¼ìŠµë‹ˆë‹¤.\n");
 		}
 	}
 	else if (_myHand == 2) {
 		if (_comHand == 1) {
-			::printf("ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù.\n");
+			::printf("ì»´í“¨í„°ê°€ ì´ê²¼ìŠµë‹ˆë‹¤.\n");
 		}
 		if (_comHand == 0) {
-			::printf("ÇÃ·¹ÀÌ¾î°¡ ÀÌ°å½À´Ï´Ù.\n");
+			::printf("í”Œë ˆì´ì–´ê°€ ì´ê²¼ìŠµë‹ˆë‹¤.\n");
 		}
 	}
-	else
+	else{
 		::printf("ERROR\n");
+	}
 }
