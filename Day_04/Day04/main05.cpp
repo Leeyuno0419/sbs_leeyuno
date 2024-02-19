@@ -12,6 +12,7 @@ void PrintHands();
 void PrintGameResult();
 
 void main() {
+	srand(time(NULL));
 	::PrintGameStart();
 	::ChooseMyHand();
 	::ChooseComHand();
@@ -31,7 +32,6 @@ void ChooseMyHand() {
 }
 
 void ChooseComHand() {
-	srand(time(NULL));
 	_comHand = rand() % 3;
 }
 
