@@ -3,19 +3,19 @@
 
 using namespace std;
 
-int _attackDmg = 3;			//ÇÃ·¹ÀÌ¾î °ø°Ý·Â 3À¸·Î ¼±¾ð ¹× Á¤ÀÇ
-int _maxHp = 100, _nowHp = 100;		//ÇÃ·¹ÀÌ¾î Ã¼·Â 100À¸·Î ¼±¾ð ¹× Á¤ÀÇ
-int _x = 0, _y = 0;			//ÇÃ·¹ÀÌ¾î À§Ä¡ 0, 0À¸·Î ¼±¾ð ¹× Á¤ÀÇ
-int _exp = 0, _level = 0;	//ÇÃ·¹ÀÌ¾î °æÇèÄ¡ ¹× ·¹º§ 0À¸·Î ¼±¾ð ¹× Á¤ÀÇ
+int _attackDmg = 3;			//í”Œë ˆì´ì–´ ê³µê²©ë ¥ 3ìœ¼ë¡œ ì„ ì–¸ ë° ì •ì˜
+int _maxHp = 100, _nowHp = 100;		//í”Œë ˆì´ì–´ ì²´ë ¥ 100ìœ¼ë¡œ ì„ ì–¸ ë° ì •ì˜
+int _x = 0, _y = 0;			//í”Œë ˆì´ì–´ ìœ„ì¹˜ 0, 0ìœ¼ë¡œ ì„ ì–¸ ë° ì •ì˜
+int _exp = 0, _level = 0;	//í”Œë ˆì´ì–´ ê²½í—˜ì¹˜ ë° ë ˆë²¨ 0ìœ¼ë¡œ ì„ ì–¸ ë° ì •ì˜
 
-void GameStartSelect();	//°ÔÀÓ¼±ÅÃ(½ÃÀÛ, ¼³¸í, Á¾·á)
-void GameStart();		//°ÔÀÓ½ÃÀÛ
-void GameExplain();		//°ÔÀÓ¼³¸í
+void GameStartSelect();	//ê²Œìž„ì„ íƒ(ì‹œìž‘, ì„¤ëª…, ì¢…ë£Œ)
+void GameStart();		//ê²Œìž„ì‹œìž‘
+void GameExplain();		//ê²Œìž„ì„¤ëª…
 void MoveRoom();
 void InsertRoom(int x, int y);
 void NormalMonster();
 void BossMonster();
-//void GameExit();		//°ÔÀÓÁ¾·á
+//void GameExit();		//ê²Œìž„ì¢…ë£Œ
 
 void main()
 {
@@ -26,15 +26,15 @@ void main()
 void GameStartSelect()
 {
 	int selectnum = 0;
-	::printf("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n");
-	::printf("¦¢    Text  RPG     ¦¢\n");
-	::printf("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n");
-	::printf("1. °ÔÀÓ½ÃÀÛ\n");
-	::printf("2. °ÔÀÓ¼³¸í\n");
-	::printf("3. °ÔÀÓÁ¾·á\n");
-	::printf("¹øÈ£ÀÔ·Â: ");
+	::printf("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
+	::printf("â”‚    Text  RPG     â”‚\n");
+	::printf("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
+	::printf("1. ê²Œìž„ì‹œìž‘\n");
+	::printf("2. ê²Œìž„ì„¤ëª…\n");
+	::printf("3. ê²Œìž„ì¢…ë£Œ\n");
+	::printf("ë²ˆí˜¸ìž…ë ¥: ");
 	cin >> selectnum;
-	system("cls"); //ÄÜ¼ÖÃ¢ ÃÊ±âÈ­
+	system("cls"); //ì½˜ì†”ì°½ ì´ˆê¸°í™”
 	switch (selectnum)
 	{
 	case 1:
@@ -47,8 +47,8 @@ void GameStartSelect()
 		//GameExit();
 		break;
 	default:
-		system("cls"); //ÄÜ¼ÖÃ¢ ÃÊ±âÈ­
-		printf("¿Ã¹Ù¸£Áö ¾ÊÀº ÀÔ·ÂÀÔ´Ï´Ù.\n");
+		system("cls"); //ì½˜ì†”ì°½ ì´ˆê¸°í™”
+		printf("ì˜¬ë°”ë¥´ì§€ ì•Šì€ ìž…ë ¥ìž…ë‹ˆë‹¤.\n");
 		selectnum = 0;
 		GameStartSelect();
 		break;
@@ -60,15 +60,15 @@ void GameStart()
 	int moveNum;
 	while (_nowHp > 0)
 	{
-		system("cls"); //ÄÜ¼ÖÃ¢ ÃÊ±âÈ­
-		::printf("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n");
-		::printf("¦¢    Text  RPG     ¦¢\n");
-		::printf("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n");
-		::printf("ÇöÀç Ã¼·Â: %d / %d\n", _nowHp, _maxHp);
-		::printf("ÇöÀç °ø°Ý·Â: %d ~ %d\n", _attackDmg, _attackDmg + 2);
-		::printf("ÇöÀç ·¹º§: %d(%d/%d)\n", _level, _exp, _level*5 + 5);
-		::printf("ÇöÀç À§Ä¡: X(%d), Y(%d) - º¸½ºÀ§Ä¡(3, 3)\n", _x, _y);
-		::printf("0(»ó), 1(ÇÏ), 2(ÁÂ), 3(¿ì)·Î ¼±ÅÃ: ");
+		system("cls"); //ì½˜ì†”ì°½ ì´ˆê¸°í™”
+		::printf("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
+		::printf("â”‚    Text  RPG     â”‚\n");
+		::printf("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
+		::printf("í˜„ìž¬ ì²´ë ¥: %d / %d\n", _nowHp, _maxHp);
+		::printf("í˜„ìž¬ ê³µê²©ë ¥: %d ~ %d\n", _attackDmg, _attackDmg + 2);
+		::printf("í˜„ìž¬ ë ˆë²¨: %d(%d/%d)\n", _level, _exp, _level*5 + 5);
+		::printf("í˜„ìž¬ ìœ„ì¹˜: X(%d), Y(%d) - ë³´ìŠ¤ìœ„ì¹˜(3, 3)\n", _x, _y);
+		::printf("0(ìƒ), 1(í•˜), 2(ì¢Œ), 3(ìš°)ë¡œ ì„ íƒ: ");
 		MoveRoom();
 	}
 }
@@ -76,21 +76,21 @@ void GameStart()
 void GameExplain()
 {
 	int userInput;
-	::printf("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n");
-	::printf("¦¢    Text  RPG  Explain   ¦¢\n");
-	::printf("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n");
-	::printf("°ÔÀÓÀÌ ½ÃÀÛÇÏ¸é 0(»ó), 1(ÇÏ), 2(ÁÂ), 3(¿ì)·Î ¼±ÅÃÇÏ¿© ÀÌµ¿ÇÒ ¼ö ÀÖ´Ù.\n");
-	::printf("ÇÑÄ­ ¿òÁ÷ÀÏ ¶§¸¶´Ù ¹æ¿¡ ÀÔÀåÇÑ´Ù.\n");
-	::printf("¹æ¿¡¼­´Â ¸ó½ºÅÍ°¡ µîÀåÇÏ´Âµ¥ °ø°Ý·Â(1~10)°ú Ã¼·Â(5~10)ÀÌ ·£´ýÀ¸·Î ÁöÁ¤µÇ¾î µîÀåÇÑ´Ù.\n");
-	::printf("¸ó½ºÅÍ¿¡°Ô µ¥¹ÌÁö¸¦ ÀÔÈú ½Ã °¡À§¹ÙÀ§º¸·Î Ä¡¸íÅ¸µ¥¹ÌÁö(½Â), ±âº»µ¥¹ÌÁö(ºñ±è), ¾àÇÑµ¥¹ÌÁö(ÆÐ¹è)¸¦ ÀÔÈù´Ù.\n");
-	::printf("ÇÃ·¹ÀÌ¾îÀÇ Ã¼·ÂÀº 50 °ø°Ý·ÂÀº 3~5ÀÌ¸ç ¸ó½ºÅÍ¸¦ ÀâÀ»¶§ ¸¶´Ù °æÇèÄ¡¸¦ 2~5·£´ýÀ¸·Î È¹µæÇÑ´Ù.\n");
-	::printf("·¹º§¾÷½Ã Ã¼·ÂÀÌ °¡µæÂ÷¸ç °ø°Ý·Â 1, Ã¼·ÂÀÌ 5 Áõ°¡ÇÑ´Ù.\n");
-	::printf("x(3), y(3)ÀÇ ¹æ¿¡´Â º¸½º°¡ ÀÖÀ¸¸ç º¸½ºÀÇ Ã¼·ÂÀº 50 °ø°Ý·ÂÀº 20ÀÌ´Ù.\n");
-	::printf("½Â¸®Á¶°Ç: º¸½º¹æ ½Â¸®\n");
-	::printf("ÆÐ¹èÁ¶°Ç: Ã¼·ÂÀÌ 0ÀÌÇÏ½Ã ½ÇÆÐ\n");
-	::printf("¾Æ¹« ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+	::printf("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
+	::printf("â”‚    Text  RPG  Explain   â”‚\n");
+	::printf("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
+	::printf("ê²Œìž„ì´ ì‹œìž‘í•˜ë©´ 0(ìƒ), 1(í•˜), 2(ì¢Œ), 3(ìš°)ë¡œ ì„ íƒí•˜ì—¬ ì´ë™í•  ìˆ˜ ìžˆë‹¤.\n");
+	::printf("í•œì¹¸ ì›€ì§ì¼ ë•Œë§ˆë‹¤ ë°©ì— ìž…ìž¥í•œë‹¤.\n");
+	::printf("ë°©ì—ì„œëŠ” ëª¬ìŠ¤í„°ê°€ ë“±ìž¥í•˜ëŠ”ë° ê³µê²©ë ¥(1~10)ê³¼ ì²´ë ¥(5~10)ì´ ëžœë¤ìœ¼ë¡œ ì§€ì •ë˜ì–´ ë“±ìž¥í•œë‹¤.\n");
+	::printf("ëª¬ìŠ¤í„°ì—ê²Œ ë°ë¯¸ì§€ë¥¼ ìž…íž ì‹œ ê°€ìœ„ë°”ìœ„ë³´ë¡œ ì¹˜ëª…íƒ€ë°ë¯¸ì§€(ìŠ¹), ê¸°ë³¸ë°ë¯¸ì§€(ë¹„ê¹€), ì•½í•œë°ë¯¸ì§€(íŒ¨ë°°)ë¥¼ ìž…ížŒë‹¤.\n");
+	::printf("í”Œë ˆì´ì–´ì˜ ì²´ë ¥ì€ 100 ê³µê²©ë ¥ì€ 3~5ì´ë©° ëª¬ìŠ¤í„°ë¥¼ ìž¡ì„ë•Œ ë§ˆë‹¤ ê²½í—˜ì¹˜ë¥¼ 2~5ëžœë¤ìœ¼ë¡œ íšë“í•œë‹¤.\n");
+	::printf("ë ˆë²¨ì—…ì‹œ ì²´ë ¥ì´ ê°€ë“ì°¨ë©° ê³µê²©ë ¥ 1, ì²´ë ¥ì´ 10 ì¦ê°€í•œë‹¤.\n");
+	::printf("x(3), y(3)ì˜ ë°©ì—ëŠ” ë³´ìŠ¤ê°€ ìžˆìœ¼ë©° ë³´ìŠ¤ì˜ ì²´ë ¥ì€ 50 ê³µê²©ë ¥ì€ 20ì´ë‹¤.\n");
+	::printf("ìŠ¹ë¦¬ì¡°ê±´: ë³´ìŠ¤ë°© ìŠ¹ë¦¬\n");
+	::printf("íŒ¨ë°°ì¡°ê±´: ì²´ë ¥ì´ 0ì´í•˜ì‹œ ì‹¤íŒ¨\n");
+	::printf("ì•„ë¬´ ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 	cin >> userInput;
-	system("cls"); //ÄÜ¼ÖÃ¢ ÃÊ±âÈ­
+	system("cls"); //ì½˜ì†”ì°½ ì´ˆê¸°í™”
 	GameStartSelect();
 }
 
@@ -100,19 +100,19 @@ void MoveRoom()
 	cin >> moveWay;
 	switch (moveWay)
 	{
-	case 0:	//»ó
+	case 0:	//ìƒ
 		_y++;
 		InsertRoom(_x, _y);
 		break;
-	case 1: //ÇÏ
+	case 1: //í•˜
 		_y--;
 		InsertRoom(_x, _y);
 		break;
-	case 2: //ÁÂ
+	case 2: //ì¢Œ
 		_x--;
 		InsertRoom(_x, _y);
 		break;
-	case 3: //¿ì
+	case 3: //ìš°
 		_x++;
 		InsertRoom(_x, _y);
 		break;
@@ -123,7 +123,7 @@ void MoveRoom()
 
 void InsertRoom(int x, int y)
 {
-	if (x == 3 && y == 3) //º¸½º¹æ ÀÔÀå
+	if (x == 3 && y == 3) //ë³´ìŠ¤ë°© ìž…ìž¥
 	{
 		BossMonster();
 	}
@@ -138,103 +138,103 @@ void NormalMonster()
 	int userInput;
 	int expUp;
 	int myHand = 0, mobHand = 0;
-	int mobHp = rand() % 6 + 5; // ¸ó½ºÅÍ Ã¼·Â 5~10
+	int mobHp = rand() % 6 + 5; // ëª¬ìŠ¤í„° ì²´ë ¥ 5~10
 	int mobNowHp = mobHp;
-	int mobDmg = rand() % 10 + 1; // ¸ó½ºÅÍ °ø°Ý·Â 1~10
+	int mobDmg = rand() % 10 + 1; // ëª¬ìŠ¤í„° ê³µê²©ë ¥ 1~10
 	while (_nowHp > 0 && mobNowHp > 0)
 	{
-		system("cls"); //ÄÜ¼ÖÃ¢ ÃÊ±âÈ­
-		::printf("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n");
-		::printf("¦¢    Text  RPG  NormalMonster     ¦¢\n");
-		::printf("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n");
-		::printf("ÇöÀç Ã¼·Â: %d / %d\n", _nowHp, _maxHp);
-		::printf("ÇöÀç °ø°Ý·Â: %d ~ %d\n", _attackDmg, _attackDmg + 2);
-		::printf("ÇöÀç ·¹º§: %d(%d/%d))\n", _level, _exp, _level * 5 + 5);
-		::printf("¸ó½ºÅÍ Ã¼·Â: %d/%d °ø°Ý·Â: %d\n", mobNowHp, mobHp, mobDmg);
-		::printf("°¡À§(0), ¹ÙÀ§(1), º¸(2) ÀÔ·Â: ");
-		cin >> myHand; //ÇÃ·¹ÀÌ¾î °¡À§¹ÙÀ§º¸ ÀÔ·Â
-		mobHand = rand() % 3; //¸ó½ºÅÍ °¡À§¹ÙÀ§º¸ ·£´ý ÁöÁ¤
-		::printf("ÇÃ·¹ÀÌ¾î°¡ °í¸¥ ¼Õ: ");
+		system("cls"); //ì½˜ì†”ì°½ ì´ˆê¸°í™”
+		::printf("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
+		::printf("â”‚    Text  RPG  NormalMonster     â”‚\n");
+		::printf("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
+		::printf("í˜„ìž¬ ì²´ë ¥: %d / %d\n", _nowHp, _maxHp);
+		::printf("í˜„ìž¬ ê³µê²©ë ¥: %d ~ %d\n", _attackDmg, _attackDmg + 2);
+		::printf("í˜„ìž¬ ë ˆë²¨: %d(%d/%d))\n", _level, _exp, _level * 5 + 5);
+		::printf("ëª¬ìŠ¤í„° ì²´ë ¥: %d/%d ê³µê²©ë ¥: %d\n", mobNowHp, mobHp, mobDmg);
+		::printf("ê°€ìœ„(0), ë°”ìœ„(1), ë³´(2) ìž…ë ¥: ");
+		cin >> myHand; //í”Œë ˆì´ì–´ ê°€ìœ„ë°”ìœ„ë³´ ìž…ë ¥
+		mobHand = rand() % 3; //ëª¬ìŠ¤í„° ê°€ìœ„ë°”ìœ„ë³´ ëžœë¤ ì§€ì •
+		::printf("í”Œë ˆì´ì–´ê°€ ê³ ë¥¸ ì†: ");
 		switch (myHand)
 		{
 		case 0:
-			::printf("°¡À§\n");
+			::printf("ê°€ìœ„\n");
 			break;
 		case 1:
-			::printf("¹ÙÀ§\n");
+			::printf("ë°”ìœ„\n");
 			break;
 		case 2:
-			::printf("º¸\n");
+			::printf("ë³´\n");
 			break;
 		default:
 			break;
 		}
-		::printf("¸ó½ºÅÍ°¡ °í¸¥ ¼Õ: ");
+		::printf("ëª¬ìŠ¤í„°ê°€ ê³ ë¥¸ ì†: ");
 		switch (mobHand)
 		{
 		case 0:
-			::printf("°¡À§\n");
+			::printf("ê°€ìœ„\n");
 			break;
 		case 1:
-			::printf("¹ÙÀ§\n");
+			::printf("ë°”ìœ„\n");
 			break;
 		case 2:
-			::printf("º¸\n");
+			::printf("ë³´\n");
 			break;
 		default:
 			break;
 		}
 		if (myHand == mobHand) {
-			::printf("ºñ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg + 1);
+			::printf("ë¹„ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg + 1);
 			mobNowHp -= (_attackDmg + 1);
 		}
 		else if (myHand == 0) {
 			if (mobHand == 1) {
-				::printf("¸ó½ºÅÍ°¡ ÀÌ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg);
+				::printf("ëª¬ìŠ¤í„°ê°€ ì´ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg);
 				mobNowHp -= _attackDmg;
 			}
 			if (mobHand == 2) {
-				::printf("ÇÃ·¹ÀÌ¾î°¡ ÀÌ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg + 2);
+				::printf("í”Œë ˆì´ì–´ê°€ ì´ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg + 2);
 				mobNowHp -= (_attackDmg + 2);
 			}
 		}
 		else if (myHand == 1) {
 			if (mobHand == 2) {
-				::printf("¸ó½ºÅÍ°¡ ÀÌ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg);
+				::printf("ëª¬ìŠ¤í„°ê°€ ì´ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg);
 				mobNowHp -= _attackDmg;
 			}
 			if (mobHand == 0) {
-				::printf("ÇÃ·¹ÀÌ¾î°¡ ÀÌ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg + 2);
+				::printf("í”Œë ˆì´ì–´ê°€ ì´ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg + 2);
 				mobNowHp -= (_attackDmg + 2);
 			}
 		}
 		else if (myHand == 2) {
 			if (mobHand == 1) {
-				::printf("¸ó½ºÅÍ°¡ ÀÌ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg);
+				::printf("ëª¬ìŠ¤í„°ê°€ ì´ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg);
 				mobNowHp -= _attackDmg;
 			}
 			if (mobHand == 0) {
-				::printf("ÇÃ·¹ÀÌ¾î°¡ ÀÌ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg + 2);
+				::printf("í”Œë ˆì´ì–´ê°€ ì´ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg + 2);
 				mobNowHp -= (_attackDmg + 2);
 			}
 		}
 		if (mobNowHp > 0)
 		{
-			::printf("¸ó½ºÅÍ°¡ »ì¾Æ³²¾Æ ÇÃ·¹ÀÌ¾î¸¦ ¶§¸³´Ï´Ù.\n");
-			::printf("µ¥¹ÌÁö %d¸¦ ÀÔ½À´Ï´Ù.\n", mobDmg);
+			::printf("ëª¬ìŠ¤í„°ê°€ ì‚´ì•„ë‚¨ì•„ í”Œë ˆì´ì–´ë¥¼ ë•Œë¦½ë‹ˆë‹¤.\n");
+			::printf("ë°ë¯¸ì§€ %dë¥¼ ìž…ìŠµë‹ˆë‹¤.\n", mobDmg);
 			_nowHp -= mobDmg;
-			if (_nowHp <= 0) //ÇÃ·¹ÀÌ¾î Ã¼·Â 0 ÀÌÇÏ
+			if (_nowHp <= 0) //í”Œë ˆì´ì–´ ì²´ë ¥ 0 ì´í•˜
 			{
-				::printf("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n");
-				::printf("¦¢    Text  RPG  LOSE!!!    ¦¢\n");
-				::printf("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n");
+				::printf("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
+				::printf("â”‚    Text  RPG  LOSE!!!    â”‚\n");
+				::printf("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
 			}
 		}
 		else
 		{
 			expUp = rand() % 4 + 2;
-			::printf("¸ó½ºÅÍ¸¦ Á×¿´½À´Ï´Ù.\n");
-			::printf("°æÇèÄ¡ %d Áõ°¡\n", expUp);
+			::printf("ëª¬ìŠ¤í„°ë¥¼ ì£½ì˜€ìŠµë‹ˆë‹¤.\n");
+			::printf("ê²½í—˜ì¹˜ %d ì¦ê°€\n", expUp);
 			_exp += expUp;
 			if (_exp >= (_level * 5) + 5)
 			{
@@ -243,11 +243,11 @@ void NormalMonster()
 				_attackDmg++;
 				_maxHp += 5;
 				_nowHp += 10;
-				::printf("!!!·¹º§¾÷!!!\n");
-				::printf("°ø°Ý·Â +1, ÃÖ´ëÃ¼·Â +5, Ã¼·ÂÈ¸º¹ +10\n");
+				::printf("!!!ë ˆë²¨ì—…!!!\n");
+				::printf("ê³µê²©ë ¥ +1, ìµœëŒ€ì²´ë ¥ +5, ì²´ë ¥íšŒë³µ +10\n");
 			}
 		}
-		::printf("´ÙÀ½ ÅÏ ½ÃÀÛÇÏ±â - ¾Æ¹« ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		::printf("ë‹¤ìŒ í„´ ì‹œìž‘í•˜ê¸° - ì•„ë¬´ ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 		cin >> userInput;
 	}
 }
@@ -255,109 +255,109 @@ void BossMonster()
 {
 	int userInput;
 	int myHand = 0, mobHand = 0;
-	int mobHp = 50; // º¸½º¸ó½ºÅÍ Ã¼·Â 50
+	int mobHp = 50; // ë³´ìŠ¤ëª¬ìŠ¤í„° ì²´ë ¥ 50
 	int mobNowHp = mobHp;
-	int mobDmg = 10; // º¸½º¸ó½ºÅÍ °ø°Ý·Â 10
+	int mobDmg = 10; // ë³´ìŠ¤ëª¬ìŠ¤í„° ê³µê²©ë ¥ 10
 	while (_nowHp > 0 && mobNowHp > 0)
 	{
-		system("cls"); //ÄÜ¼ÖÃ¢ ÃÊ±âÈ­
-		::printf("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n");
-		::printf("¦¢    Text  RPG  BossMonster       ¦¢\n");
-		::printf("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n");
-		::printf("ÇöÀç Ã¼·Â: %d / %d\n", _nowHp, _maxHp);
-		::printf("ÇöÀç °ø°Ý·Â: %d ~ %d\n", _attackDmg, _attackDmg + 2);
-		::printf("ÇöÀç ·¹º§: %d(%d/%d))\n", _level, _exp, _level * 5 + 5);
-		::printf("¸ó½ºÅÍ Ã¼·Â: %d/%d °ø°Ý·Â: %d\n", mobNowHp, mobHp, mobDmg);
-		::printf("°¡À§(0), ¹ÙÀ§(1), º¸(2) ÀÔ·Â: ");
-		cin >> myHand; //ÇÃ·¹ÀÌ¾î °¡À§¹ÙÀ§º¸ ÀÔ·Â
-		mobHand = rand() % 3; //¸ó½ºÅÍ °¡À§¹ÙÀ§º¸ ·£´ý ÁöÁ¤
-		::printf("ÇÃ·¹ÀÌ¾î°¡ °í¸¥ ¼Õ: ");
+		system("cls"); //ì½˜ì†”ì°½ ì´ˆê¸°í™”
+		::printf("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
+		::printf("â”‚    Text  RPG  BossMonster       â”‚\n");
+		::printf("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
+		::printf("í˜„ìž¬ ì²´ë ¥: %d / %d\n", _nowHp, _maxHp);
+		::printf("í˜„ìž¬ ê³µê²©ë ¥: %d ~ %d\n", _attackDmg, _attackDmg + 2);
+		::printf("í˜„ìž¬ ë ˆë²¨: %d(%d/%d))\n", _level, _exp, _level * 5 + 5);
+		::printf("ëª¬ìŠ¤í„° ì²´ë ¥: %d/%d ê³µê²©ë ¥: %d\n", mobNowHp, mobHp, mobDmg);
+		::printf("ê°€ìœ„(0), ë°”ìœ„(1), ë³´(2) ìž…ë ¥: ");
+		cin >> myHand; //í”Œë ˆì´ì–´ ê°€ìœ„ë°”ìœ„ë³´ ìž…ë ¥
+		mobHand = rand() % 3; //ëª¬ìŠ¤í„° ê°€ìœ„ë°”ìœ„ë³´ ëžœë¤ ì§€ì •
+		::printf("í”Œë ˆì´ì–´ê°€ ê³ ë¥¸ ì†: ");
 		switch (myHand)
 		{
 		case 0:
-			::printf("°¡À§\n");
+			::printf("ê°€ìœ„\n");
 			break;
 		case 1:
-			::printf("¹ÙÀ§\n");
+			::printf("ë°”ìœ„\n");
 			break;
 		case 2:
-			::printf("º¸\n");
+			::printf("ë³´\n");
 			break;
 		default:
 			break;
 		}
-		::printf("¸ó½ºÅÍ°¡ °í¸¥ ¼Õ: ");
+		::printf("ëª¬ìŠ¤í„°ê°€ ê³ ë¥¸ ì†: ");
 		switch (mobHand)
 		{
 		case 0:
-			::printf("°¡À§\n");
+			::printf("ê°€ìœ„\n");
 			break;
 		case 1:
-			::printf("¹ÙÀ§\n");
+			::printf("ë°”ìœ„\n");
 			break;
 		case 2:
-			::printf("º¸\n");
+			::printf("ë³´\n");
 			break;
 		default:
 			break;
 		}
 		if (myHand == mobHand) {
-			::printf("ºñ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg + 1);
+			::printf("ë¹„ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg + 1);
 			mobNowHp -= (_attackDmg + 1);
 		}
 		else if (myHand == 0) {
 			if (mobHand == 1) {
-				::printf("¸ó½ºÅÍ°¡ ÀÌ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg);
+				::printf("ëª¬ìŠ¤í„°ê°€ ì´ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg);
 				mobNowHp -= _attackDmg;
 			}
 			if (mobHand == 2) {
-				::printf("ÇÃ·¹ÀÌ¾î°¡ ÀÌ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg + 2);
+				::printf("í”Œë ˆì´ì–´ê°€ ì´ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg + 2);
 				mobNowHp -= (_attackDmg + 2);
 			}
 		}
 		else if (myHand == 1) {
 			if (mobHand == 2) {
-				::printf("¸ó½ºÅÍ°¡ ÀÌ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg);
+				::printf("ëª¬ìŠ¤í„°ê°€ ì´ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg);
 				mobNowHp -= _attackDmg;
 			}
 			if (mobHand == 0) {
-				::printf("ÇÃ·¹ÀÌ¾î°¡ ÀÌ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg + 2);
+				::printf("í”Œë ˆì´ì–´ê°€ ì´ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg + 2);
 				mobNowHp -= (_attackDmg + 2);
 			}
 		}
 		else if (myHand == 2) {
 			if (mobHand == 1) {
-				::printf("¸ó½ºÅÍ°¡ ÀÌ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg);
+				::printf("ëª¬ìŠ¤í„°ê°€ ì´ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg);
 				mobNowHp -= _attackDmg;
 			}
 			if (mobHand == 0) {
-				::printf("ÇÃ·¹ÀÌ¾î°¡ ÀÌ°å½À´Ï´Ù. µ¥¹ÌÁö %d¸¦ ÀÔÈü´Ï´Ù.\n", _attackDmg + 2);
+				::printf("í”Œë ˆì´ì–´ê°€ ì´ê²¼ìŠµë‹ˆë‹¤. ë°ë¯¸ì§€ %dë¥¼ ìž…íž™ë‹ˆë‹¤.\n", _attackDmg + 2);
 				mobNowHp -= (_attackDmg + 2);
 			}
 		}
 		if (mobNowHp > 0)
 		{
-			::printf("¸ó½ºÅÍ°¡ »ì¾Æ³²¾Æ ÇÃ·¹ÀÌ¾î¸¦ ¶§¸³´Ï´Ù.\n");
-			::printf("µ¥¹ÌÁö %d¸¦ ÀÔ½À´Ï´Ù.\n", mobDmg);
+			::printf("ëª¬ìŠ¤í„°ê°€ ì‚´ì•„ë‚¨ì•„ í”Œë ˆì´ì–´ë¥¼ ë•Œë¦½ë‹ˆë‹¤.\n");
+			::printf("ë°ë¯¸ì§€ %dë¥¼ ìž…ìŠµë‹ˆë‹¤.\n", mobDmg);
 			_nowHp -= mobDmg;
-			if (_nowHp <= 0) //ÇÃ·¹ÀÌ¾î Ã¼·Â 0 ÀÌÇÏ
+			if (_nowHp <= 0) //í”Œë ˆì´ì–´ ì²´ë ¥ 0 ì´í•˜
 			{
-				::printf("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n");
-				::printf("¦¢    Text  RPG  LOSE!!!    ¦¢\n");
-				::printf("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n");
-				::printf("¾Æ¹« ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+				::printf("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
+				::printf("â”‚    Text  RPG  LOSE!!!    â”‚\n");
+				::printf("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
+				::printf("ì•„ë¬´ ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 				cin >> userInput;
 			}
 		}
 		else
 		{
-			::printf("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n");
-			::printf("¦¢    Text  RPG  WIN!!!     ¦¢\n");
-			::printf("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n");
-			::printf("¾Æ¹« ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			::printf("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
+			::printf("â”‚    Text  RPG  WIN!!!     â”‚\n");
+			::printf("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
+			::printf("ì•„ë¬´ ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 			cin >> userInput;
 		}
-		::printf("´ÙÀ½ ÅÏ ½ÃÀÛÇÏ±â - ¾Æ¹« ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		::printf("ë‹¤ìŒ í„´ ì‹œìž‘í•˜ê¸° - ì•„ë¬´ ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 		cin >> userInput;
 	}
 }
