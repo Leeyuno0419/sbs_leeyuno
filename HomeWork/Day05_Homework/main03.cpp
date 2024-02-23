@@ -27,11 +27,11 @@ enum eRSP
 	PAPER
 };
 
-void SelectGame();
-void PlayWinFiveTimesGame();
-void PlayRepeatTenTimesGame();
-void RockScissorPaperGame();
-void PrintResult();
+void SelectGame(); //게임선택 함수
+void PlayWinFiveTimesGame(); //5번 이길 떄까지 반복모드 함수
+void PlayRepeatTenTimesGame(); //10번 반복모드 함수
+void RockScissorPaperGame(); //가위바위보게임 함수
+void PrintResult(); //가위바위보 결과 출력 및 처리 함수
 
 void main()
 {
