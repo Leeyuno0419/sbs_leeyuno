@@ -30,7 +30,7 @@ enum eRSP
 void SelectGame(); //게임선택 함수
 void PlayWinFiveTimesGame(); //5번 이길 떄까지 반복모드 함수
 void PlayRepeatTenTimesGame(); //10번 반복모드 함수
-void RockScissorPaperGame(); //가위바위보게임 함수
+void PlayRockScissorPaperGame(); //가위바위보게임 함수
 void PrintResult(); //가위바위보 결과 출력 및 처리 함수
 
 void main()
@@ -76,7 +76,7 @@ void PlayWinFiveTimesGame() //게임모드 1번 - 5번 이길 때까지 반복�
 		printf("게임모드 - 5번이길 때까지 반복모드\n");
 		printf("현재 승리횟수: %d, 패배횟수: %d\n", _winNumber, _loseNumber);
 		printf("현재 무승부횟수: %d, 반복횟수: %d\n", _drawNumber, _tryNumber);
-		RockScissorPaperGame();
+		PlayRockScissorPaperGame();
 	}
 	system("cls"); //콘솔창 초기화
 	printf("┌─────────────────────────────────┐\n");
@@ -98,7 +98,7 @@ void PlayRepeatTenTimesGame() //게임모드 2번 - 10번 반복모드
 		printf("게임모드 - 10번 반복모드\n");
 		printf("현재 승리횟수: %d, 패배횟수: %d\n", _winNumber, _loseNumber);
 		printf("현재 무승부횟수: %d, 반복횟수: %d\n", _drawNumber, _tryNumber);
-		RockScissorPaperGame(); //게임실행
+		PlayRockScissorPaperGame(); //게임실행
 	}
 	system("cls"); //콘솔창 초기화
 	printf("┌─────────────────────────────────┐\n");
@@ -109,7 +109,7 @@ void PlayRepeatTenTimesGame() //게임모드 2번 - 10번 반복모드
 	printf("현재 무승부횟수: %d, 반복횟수: %d\n", _drawNumber, _tryNumber);
 }
 
-void RockScissorPaperGame() //가위바위보게임 실행
+void PlayRockScissorPaperGame() //가위바위보게임 실행
 {
 	printf("바위(0), 가위(1), 보(2) 입력: ");
 	cin >> _userHand;
