@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6B1DFD3E-E2CC-4390-AE35-90FCE5993332}|Day_06\\Day_06.vcxproj|C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main03.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6B1DFD3E-E2CC-4390-AE35-90FCE5993332}|Day_06\\Day_06.vcxproj|solutionrelative:Day_06\\main03.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B1DFD3E-E2CC-4390-AE35-90FCE5993332}|Day_06\\Day_06.vcxproj|C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main04.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6B1DFD3E-E2CC-4390-AE35-90FCE5993332}|Day_06\\Day_06.vcxproj|solutionrelative:Day_06\\main04.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B1DFD3E-E2CC-4390-AE35-90FCE5993332}|Day_06\\Day_06.vcxproj|C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main06.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6B1DFD3E-E2CC-4390-AE35-90FCE5993332}|Day_06\\Day_06.vcxproj|solutionrelative:Day_06\\main06.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B1DFD3E-E2CC-4390-AE35-90FCE5993332}|Day_06\\Day_06.vcxproj|C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main05.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6B1DFD3E-E2CC-4390-AE35-90FCE5993332}|Day_06\\Day_06.vcxproj|solutionrelative:Day_06\\main05.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6B1DFD3E-E2CC-4390-AE35-90FCE5993332}|Day_06\\Day_06.vcxproj|C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main02.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6B1DFD3E-E2CC-4390-AE35-90FCE5993332}|Day_06\\Day_06.vcxproj|solutionrelative:Day_06\\main02.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -18,30 +34,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main06.cpp",
+              "DocumentMoniker": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main06.cpp",
+              "RelativeDocumentMoniker": "Day_06\\main06.cpp",
+              "ToolTip": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main06.cpp",
+              "RelativeToolTip": "Day_06\\main06.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-26T12:32:39.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "main05.cpp",
+              "DocumentMoniker": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main05.cpp",
+              "RelativeDocumentMoniker": "Day_06\\main05.cpp",
+              "ToolTip": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main05.cpp",
+              "RelativeToolTip": "Day_06\\main05.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-26T12:23:38.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main04.cpp",
+              "DocumentMoniker": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main04.cpp",
+              "RelativeDocumentMoniker": "Day_06\\main04.cpp",
+              "ToolTip": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main04.cpp",
+              "RelativeToolTip": "Day_06\\main04.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-26T12:13:15.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "main03.cpp",
+              "DocumentMoniker": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main03.cpp",
+              "RelativeDocumentMoniker": "Day_06\\main03.cpp",
+              "ToolTip": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main03.cpp",
+              "RelativeToolTip": "Day_06\\main03.cpp",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-26T11:43:15.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "main02.cpp",
               "DocumentMoniker": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main02.cpp",
               "RelativeDocumentMoniker": "Day_06\\main02.cpp",
               "ToolTip": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main02.cpp",
               "RelativeToolTip": "Day_06\\main02.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-02-26T11:04:22.158Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "main01.cpp",
               "DocumentMoniker": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main01.cpp",
               "RelativeDocumentMoniker": "Day_06\\main01.cpp",
               "ToolTip": "C:\\Users\\LEEYUNO\\Desktop\\\uAC8C\uC784\uD504\uB85C\uADF8\uB798\uBC0D\\Day_06\\Day_06\\main01.cpp",
               "RelativeToolTip": "Day_06\\main01.cpp",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAA0AAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-02-26T10:05:30.594Z",
               "EditorCaption": ""
