@@ -1,23 +1,23 @@
 #include <iostream>
 #include <time.h>
 
-#define BINGOSIZE 4 //บ๙ฐํฦว ลฉฑโ BINGOSIZE * BINGOSIZE
-#define BINGOEND 3 //บ๙ฐํ ฟฯผบมถฐว (ฟน: 3ภฯฐๆฟ์ 3มูฟฯผบ ฝร ณกณฒ)
+#define BINGOSIZE 5 //๋น๊ณ ํ ํฌ๊ธฐ BINGOSIZE * BINGOSIZE
+#define BINGOEND 3 //๋น๊ณ  ์์ฑ์กฐ๊ฑด (์: 3์ผ๊ฒฝ์ฐ 3์ค์์ฑ ์ ๋๋จ)
 
 using namespace std;
 
-void InitBingo(int bingoBoard[][BINGOSIZE]); //BINGOSIZE*BINGOSIZE ลฉฑโภว บ๙ฐํฦว รสฑโปýผบ วิผ๖ - (1 ~ BINGOSIZE*BINGOSIZE)
-void PrintBingo(int bingoBoard1[][BINGOSIZE], int bingoBoard2[][BINGOSIZE]);//บ๙ฐํฦว1, บ๙ฐํฦว2 รโทย วิผ๖
-void SwapBingo(int bingoBoard[][BINGOSIZE], int swapTime);//บ๙ฐํฦวภป swapTimeธธลญ ผฏดย วิผ๖
-void SelectBingoNumber(int selectNumber); //บ๙ฐํฦว ผýภฺ ภิทยวิผ๖
-bool isDuplicate(int number); //ม฿บนตศ ภิทยภป ศฎภฮวฯดย วิผ๖ (ม฿บนภิทยฝร trueนÝศฏ, ม฿บนภิทยภฬ พฦดา ฝร false นÝศฏ)
-bool isBingo(int bingoBoard1[][BINGOSIZE]); //บ๙ฐํฟฯผบ มถฐว ดÞผบมถฐว ศฎภฮวฯดย วิผ๖(ฟฯผบมถฐว ดÞผบ ฝร trueนÝศฏ)
-void PrintResult(); //บ๙ฐํฐก ณกณฏ ฝร ภฺตฟ รโทย
+void InitBingo(int bingoBoard[][BINGOSIZE]); //BINGOSIZE*BINGOSIZE ํฌ๊ธฐ์ ๋น๊ณ ํ ์ด๊ธฐ์์ฑ ํ•จ์ - (1 ~ BINGOSIZE*BINGOSIZE)
+void PrintBingo(int bingoBoard1[][BINGOSIZE], int bingoBoard2[][BINGOSIZE]);//๋น๊ณ ํ1, ๋น๊ณ ํ2 ์ถ๋ ฅ ํ•จ์
+void SwapBingo(int bingoBoard[][BINGOSIZE], int swapTime);//๋น๊ณ ํ์ swapTime๋งํผ ์๋” ํ•จ์
+void SelectBingoNumber(int selectNumber); //๋น๊ณ ํ ์ซ์ ์…๋ ฅํ•จ์
+bool isDuplicate(int number); //์ค‘๋ณต๋ ์…๋ ฅ์ ํ•์ธํ•๋” ํ•จ์ (์ค‘๋ณต์…๋ ฅ์ true๋ฐํ, ์ค‘๋ณต์…๋ ฅ์ด ์•๋ ์ false ๋ฐํ)
+bool isBingo(int bingoBoard1[][BINGOSIZE]); //๋น๊ณ ์์ฑ ์กฐ๊ฑด ๋ฌ์ฑ์กฐ๊ฑด ํ•์ธํ•๋” ํ•จ์(์์ฑ์กฐ๊ฑด ๋ฌ์ฑ ์ true๋ฐํ)
+void PrintResult(); //๋น๊ณ ๊ฐ€ ๋๋  ์ ์๋ ์ถ๋ ฅ
 
-int _bingoPlayer[BINGOSIZE][BINGOSIZE]; //วรทนภฬพ๎ บ๙ฐํฦว 2ย๗ฟ๘ น่ฟญ BINGOSIZE * BINGOSIZE
-int _bingoCom[BINGOSIZE][BINGOSIZE]; //ฤฤวปลอ บ๙ฐํฦว 2ย๗ฟ๘ น่ฟญ BINGOSIZE * BINGOSIZE
-int _selectedNumber[BINGOSIZE * BINGOSIZE] = {}; //ภิทยตศ ผýภฺธฆ ภ๚ภๅวฯดย บฏผ๖
-int _tryNumber = 0; //ภิทยตศ ผýภฺภว ศฝผ๖ธฆ ภ๚ภๅวฯดย บฏผ๖
+int _bingoPlayer[BINGOSIZE][BINGOSIZE]; //ํ”๋ ์ด์–ด ๋น๊ณ ํ 2์ฐจ์ ๋ฐฐ์—ด BINGOSIZE * BINGOSIZE
+int _bingoCom[BINGOSIZE][BINGOSIZE]; //์ปดํ“จํฐ ๋น๊ณ ํ 2์ฐจ์ ๋ฐฐ์—ด BINGOSIZE * BINGOSIZE
+int _selectedNumber[BINGOSIZE * BINGOSIZE] = {}; //์…๋ ฅ๋ ์ซ์๋ฅผ ์ €์ฅํ•๋” ๋ณ€์
+int _tryNumber = 0; //์…๋ ฅ๋ ์ซ์์ ํ์๋ฅผ ์ €์ฅํ•๋” ๋ณ€์
 
 void main()
 {
@@ -29,15 +29,15 @@ void main()
 	InitBingo(_bingoCom);
 	SwapBingo(_bingoPlayer, 1000);
 	SwapBingo(_bingoCom, 1000);
-	while (!isBingo(_bingoPlayer) && !isBingo(_bingoCom)) //ตัม฿ฟก วัธํภฬถ๓ตต ฟฯผบมถฐว ดÞผบ ฝร ฑืธธ วีดฯดู.
+	while (!isBingo(_bingoPlayer) && !isBingo(_bingoCom)) //๋‘์ค‘์— ํ•๋ช…์ด๋ผ๋ ์์ฑ์กฐ๊ฑด ๋ฌ์ฑ ์ ๊ทธ๋ง ํ•ฉ๋๋ค.
 	{
 		PrintBingo(_bingoPlayer, _bingoCom);
-		printf("ผýภฺธฆ ภิทย: ");
+		printf("์ซ์๋ฅผ ์…๋ ฅ: ");
 		cin >> playerInput;
 		SelectBingoNumber(playerInput);
 		PrintBingo(_bingoPlayer, _bingoCom);
 		PrintResult();
-		printf("ฤฤวปลอ ลฯ\n");
+		printf("์ปดํ“จํฐ ํด\n");
 		system("pause");
 		SelectBingoNumber(rand()% (BINGOSIZE * BINGOSIZE) + 1);
 		PrintResult();
@@ -58,7 +58,7 @@ void InitBingo(int bingoBoard[][BINGOSIZE])
 
 void PrintBingo(int bingoBoard1[][BINGOSIZE], int bingoBoard2[][BINGOSIZE])
 {
-	printf("กแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแ\n\n");
+	printf("โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– \n\n");
 	printf("\tPLAYER");
 	for (int i = 0; i < BINGOSIZE; i++)
 	{
@@ -78,7 +78,7 @@ void PrintBingo(int bingoBoard1[][BINGOSIZE], int bingoBoard2[][BINGOSIZE])
 		}
 		printf("\n");
 	}
-	printf("\nกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแกแ\n");
+	printf("\nโ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– โ– \n");
 }
 
 void SwapBingo(int bingoBoard[][BINGOSIZE], int swapTime)
@@ -98,7 +98,7 @@ void SwapBingo(int bingoBoard[][BINGOSIZE], int swapTime)
 
 void SelectBingoNumber(int selectNumber)
 {
-	printf("ภิทยตศ ผýภฺ: %d\n", selectNumber);
+	printf("์…๋ ฅ๋ ์ซ์: %d\n", selectNumber);
 	if(!isDuplicate(selectNumber))
 	{
 		for (int i = 0; i < BINGOSIZE; i++)
@@ -120,7 +120,7 @@ void SelectBingoNumber(int selectNumber)
 	}
 	else
 	{
-		printf("ม฿บนตศ ผýภฺธฆ ภิทยวฯฟดฝภดฯดู. ลฯภฬ ณัพ๎ฐฉดฯดู.\n");
+		printf("์ค‘๋ณต๋ ์ซ์๋ฅผ ์…๋ ฅํ•์€์ต๋๋ค. ํด์ด ๋์–ด๊ฐ‘๋๋ค.\n");
 	}
 }
 
@@ -141,7 +141,7 @@ bool isBingo(int bingoBoard[][BINGOSIZE])
 	bool complet = false;
 	int completedNumber = 0;
 
-	//ฐกทฮ รผลฉ
+	//๊ฐ€๋ก ์ฒดํฌ
 	for (int i = 0; i < BINGOSIZE; i++)
 	{
 		bool bingo = true;
@@ -158,7 +158,7 @@ bool isBingo(int bingoBoard[][BINGOSIZE])
 			completedNumber++;
 		}
 	}
-	//ผผทฮรผลฉ
+	//์ธ๋ก์ฒดํฌ
 	for (int i = 0; i < BINGOSIZE; i++)
 	{
 		bool bingo = true;
@@ -175,8 +175,8 @@ bool isBingo(int bingoBoard[][BINGOSIZE])
 			completedNumber++;
 		}
 	}
-	//ด๋ฐขผฑรผลฉ
-	//ฟÞยส ป๓ดÜฟกผญ ฟภธฅยส วฯดÜภธทฮ รผลฉ
+	//๋€๊ฐ์ ์ฒดํฌ
+	//์ผ์ชฝ ์๋จ์—์ ์ค๋ฅธ์ชฝ ํ•๋จ์ผ๋ก ์ฒดํฌ
 	bool leftDiagBingo = true;
 	for (int i = 0; i < BINGOSIZE; i++)
 	{
@@ -190,7 +190,7 @@ bool isBingo(int bingoBoard[][BINGOSIZE])
 	{
 		completedNumber++;
 	}
-	//ฟภธฅยส ป๓ดÜฟกผญ ฟÞยส วฯดÜภธทฮ รผลฉ
+	//์ค๋ฅธ์ชฝ ์๋จ์—์ ์ผ์ชฝ ํ•๋จ์ผ๋ก ์ฒดํฌ
 	bool RightDiagBingo = true;
 	for (int i = 0; i < BINGOSIZE; i++)
 	{
@@ -204,13 +204,13 @@ bool isBingo(int bingoBoard[][BINGOSIZE])
 	{
 		completedNumber++;
 	}
-	//ฟฯผบ มถฐว ดÞผบ ศฎภฮ
-	if (completedNumber >= BINGOEND)//ฟฯผบมถฐว ดÞผบ ฝร true นÝศฏ
+	//์์ฑ ์กฐ๊ฑด ๋ฌ์ฑ ํ•์ธ
+	if (completedNumber >= BINGOEND)//์์ฑ์กฐ๊ฑด ๋ฌ์ฑ ์ true ๋ฐํ
 	{
 		complet = true;
 		return complet;
 	}
-	else//ฟฯผบมถฐว นฬดÞผบ ฝร false นÝศฏ
+	else//์์ฑ์กฐ๊ฑด ๋ฏธ๋ฌ์ฑ ์ false ๋ฐํ
 	{
 		return complet;
 	}
@@ -221,11 +221,11 @@ void PrintResult()
 	if (isBingo(_bingoPlayer))
 	{
 		PrintBingo(_bingoPlayer, _bingoCom);
-		printf("วรทนภฬพ๎ฐก บ๙ฐํ %dมูภป ฟฯผบวฯฟดฝภดฯดู.\n- ณก -", BINGOEND);
+		printf("ํ”๋ ์ด์–ด๊ฐ€ ๋น๊ณ  %d์ค์ ์์ฑํ•์€์ต๋๋ค.\n- ๋ -", BINGOEND);
 	}
 	if (isBingo(_bingoCom))
 	{
 		PrintBingo(_bingoPlayer, _bingoCom);
-		printf("ฤฤวปลอฐก บ๙ฐํ %dมูภป ฟฯผบวฯฟดฝภดฯดู.\n- ณก -", BINGOEND);
+		printf("์ปดํ“จํฐ๊ฐ€ ๋น๊ณ  %d์ค์ ์์ฑํ•์€์ต๋๋ค.\n- ๋ -", BINGOEND);
 	}
 }
