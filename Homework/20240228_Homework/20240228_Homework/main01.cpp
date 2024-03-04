@@ -229,3 +229,14 @@ void PrintResult()
 		printf("컴퓨터가 빙고 %d줄을 완성하였습니다.\n- 끝 -", BINGOEND);
 	}
 }
+
+
+/ *강사님 피드백*
+bool 리턴하는 함수들도 대문자로 시작하면 좋을거같아요.
+
+그리고 배열을 함수로 넘겨줄때는 
+사이즈도 같이 넘겨주는게 좋아요.
+
+void InitBingo(int bingoBoard[][BINGOSIZE], int widthSIze, int heightSize);
+이런식으로요!
+*/
